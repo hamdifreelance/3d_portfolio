@@ -1,1 +1,3 @@
-# 3d_portfolio
+# React + Vite
+
+npm create vite@latest
