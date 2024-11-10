@@ -19,7 +19,7 @@ const Island = ({isRotating, setIsRotating, ...props}) => {
   const { nodes, materials } = useGLTF(islandScene);
   const lastX = useRef(0);
   const rotationSpeed = useRef(0);
-  const dumpingFactor = 0.95;
+  const dampingFactor = 0.95;
 
   const handlePointerDown = (e) => {
     e.stopPropagation();
@@ -37,8 +37,14 @@ const Island = ({isRotating, setIsRotating, ...props}) => {
     e.stopPropagation();
     e.preventDefault();
     setIsRotating(false);
+  }
 
-    const clientX = e.touches
+  const handlePointerMove = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+
+    if(isRotating) {
+      const clientX = e.touches
      ? e.touches[0].clientX
      : e.clientX;
 
@@ -47,13 +53,7 @@ const Island = ({isRotating, setIsRotating, ...props}) => {
     islandRef.current.rotation.y += delta * 0.01 * Math.PI;
     lastX.current = clientX;
     rotationSpeed.current = delta * 0.01 * Math.PI; 
-  }
-
-  const handlePointerMove = (e) => {
-    e.stopPropagation();
-    e.preventDefault();
-
-    if(isRotating) handlePointerUp(e);
+    }
   }
 
   const handleKeyDown = (e) => {
@@ -79,6 +79,8 @@ const Island = ({isRotating, setIsRotating, ...props}) => {
       if(Math.abs(rotationSpeed.current) < 0.001) {
         rotationSpeed.current = 0;
       }
+
+      islandRef.current.rotation.y += rotationSpeed.current;
     } else {
       const rotation = islandRef.current.rotation.y;
       const normalizedRotation =
