@@ -7,11 +7,10 @@ import Sky from '../models/Sky'
 import Bird from '../models/Bird'
 import Plane from '../models/Plane'
 
-{/*<div className="absolute top-28 left-0 right-0 z-10 flex items-center justify-center">
-        POPOUP
-      </div>*/}
 const Home = () => {
   const [isRotating, setIsRotating] = useState(false);
+  const [currentStage, setCurrentStage] = useState(1);
+
   const adjustIslandForScreenSize = () => {
     let screenScale = null;
     let  screenPosition = [0, -6.5, -43];
@@ -53,13 +52,14 @@ const Home = () => {
           <hemisphereLight skyColor="#b1e1ff" groundColor="#000000" intensity={1}/>
 
           <Bird />
-          <Sky />
+          <Sky isRotating={isRotating} />
           <Island 
           position={islandPosition}
           scale={islandScale}
           rotation={islandRotation}
           isRotating={isRotating}
           setIsRotating={setIsRotating}
+          setCurrentStage={setCurrentStage}
           />
 
           <Plane
