@@ -19,3 +19,6 @@ to turn something not 3d into 3d we use react three drei
 drag the glb file into gltf.pmnd.rs
 
 github copilot plugin : auto complete code
+
+npm install @emailjs/browser 
+then go to emailjs and create an account

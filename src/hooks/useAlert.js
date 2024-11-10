@@ -1,3 +1,4 @@
+//  A Custom hook
 import { useState } from 'react';
 
 const useAlert = () => {
