@@ -19,6 +19,7 @@ import twitter from './twitter.svg'
 import car from './car.svg'
 import estate from './estate.svg'
 import pricewise from './pricewise.svg'
+import movie from './movie.svg'
 import snapgram from './snapgram.svg'
 import summiz from './summiz.svg'
 import threads from './threads.svg'
@@ -26,8 +27,24 @@ import arrow from './arrow.svg'
 import contact from './contact.svg'
 import soundon from './soundon.png'
 import soundoff from './soundoff.png'
+import springboot from './springboot.svg'
+import java from './java.svg'
+import jenkins from './jenkins.svg'
+import docker from './docker.svg'
+import kubernetes from './kubernetes.svg'
+import angular from './angular.svg'
+import aws from './aws.svg'
+import gitlab from './gitlab.svg'
 
 export {
+    springboot,
+    java,
+    jenkins,
+    docker,
+    angular,
+    kubernetes,
+    aws,
+    gitlab,
     css,
     express,
     git,
@@ -49,6 +66,7 @@ export {
     car,
     estate,
     pricewise,
+    movie,
     snapgram,
     summiz,
     threads,

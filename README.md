@@ -22,3 +22,5 @@ github copilot plugin : auto complete code
 
 npm install @emailjs/browser 
 then go to emailjs and create an account
+
+react vertical timeline component for the work experience npm i react-vertical-timeline-component
